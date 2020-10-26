@@ -25,7 +25,7 @@ authurls = [
 ]
 
 urlpatterns = [
-    path('api/', include('apps.users.urlsme'),
+    path('api/', include('apps.users.urlsme')),
     path('api/users/', include('apps.users.urls')),
     path('api/auth/', include(authurls)),
     path('api/admin/', admin.site.urls),

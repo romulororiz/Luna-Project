@@ -15,7 +15,7 @@ class ListUsers(ListAPIView):
     permission_classes = []
 
 
-class Listme(ListAPIView):
+class ListMe(ListAPIView):
     """
     List all Users.
     """
