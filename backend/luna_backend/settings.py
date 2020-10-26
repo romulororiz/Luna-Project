@@ -1,3 +1,4 @@
+<<<<<<< backend/luna_backend/settings.py
 <<<<<<< HEAD
 
 =======
@@ -13,6 +14,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 >>>>>>> 211de84c531bbef0600210893bb8dc49e71db48e
+=======
+
+>>>>>>> backend/luna_backend/settings.py
 import os
 from pathlib import Path
 from datetime import timedelta
