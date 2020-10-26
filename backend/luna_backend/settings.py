@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     # third parties
     'rest_framework',
     'corsheaders',
+
+    #own
+    'apps.users',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +147,5 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTH_USER_MODEL = 'users.User'
