@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: luna:latest
+    image: luna-local:latest
     restart: always
     env_file:
       - ./envs/dev.env
@@ -16,6 +16,7 @@ services:
       - static-files:/static-files
     ports:
       - '8000:8000'
+      - '4777:22'
     depends_on:
       - postgres
 

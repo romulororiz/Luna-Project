@@ -15,9 +15,9 @@ COPY ./backend/requirements.yml /backend/requirements.yml
 
 RUN /opt/conda/bin/conda env create -f /backend/requirements.yml
 
-ENV PATH /opt/conda/envs/luna_backend/bin:$PATH
+ENV PATH /opt/conda/envs/luna-backend/bin:$PATH
 
-RUN echo "source activate luna_backend" >~/.bashrc
+RUN echo "source activate luna-backend" >~/.bashrc
 
 # create a scripts folder
 RUN mkdir -p /scripts
@@ -37,5 +37,5 @@ RUN npm i
 COPY ./frontend /frontend_tmp
 RUN npm run build
 
-WORKDIR /app
+WORKDIR /backend
 

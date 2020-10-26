@@ -1,4 +1,4 @@
-name: luna_backend
+name: luna-backend
 dependencies:
   - python=3.6
   - psycopg2
