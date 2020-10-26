@@ -1,6 +1,7 @@
-<<<<<<< HEAD
+from datetime import timedelta
+from pathlib import Path
+import os
 
-=======
 """
 Django settings for luna_backend project.
 
@@ -12,10 +13,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
->>>>>>> 211de84c531bbef0600210893bb8dc49e71db48e
-import os
-from pathlib import Path
-from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
