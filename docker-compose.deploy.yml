@@ -15,7 +15,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
 
   backend:
-    image: //CREATE REGISTRY
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-13-aug-2020/group-projects/capricorn/luna_final:latest
     restart: always
     env_file:
       - ./envs/prod.env
