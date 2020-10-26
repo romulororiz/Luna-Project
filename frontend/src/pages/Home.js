@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Navbar from '../components/Navbar';
 
 function Home() {
 	return (
-		<div>
+		<Fragment>
 			<Navbar />
-		</div>
+
+			{/* <Footer /> */}
+		</Fragment>
 	);
 }
 
