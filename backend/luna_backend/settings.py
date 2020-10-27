@@ -31,11 +31,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # third parties
+    # third party
     'rest_framework',
     'corsheaders',
+    'django_countries',
+    'phone_field',
 
+    #own apps
     'apps.users',
+    'apps.restaurants',
 ]
 
 MIDDLEWARE = [

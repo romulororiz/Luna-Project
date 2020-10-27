@@ -10,3 +10,6 @@ dependencies:
       - gunicorn
       - flake8
       - django-cors-headers
+      - django-countries
+      - django-phone-field
+      - Pillow
