@@ -6,7 +6,7 @@ import { TitleBestRated } from '../components/Home/style';
 import RestaurantSingle from '../components/Home/BestRated';
 import { Container } from '../style/theme';
 
-function Home() {
+const Home = () => {
 	return (
 		<Fragment>
 			<Navbar />
@@ -23,6 +23,6 @@ function Home() {
 			<Footer />
 		</Fragment>
 	);
-}
+};
 
 export default Home;

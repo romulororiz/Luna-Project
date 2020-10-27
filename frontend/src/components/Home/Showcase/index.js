@@ -3,7 +3,7 @@ import { ShowcaseHome } from './style';
 import Form from '../../../style/Form';
 import Btn from '../../../style/Button';
 
-function Showcase() {
+const Showcase = () => {
 	return (
 		<Fragment>
 			<ShowcaseHome>
@@ -15,6 +15,6 @@ function Showcase() {
 			</ShowcaseHome>
 		</Fragment>
 	);
-}
+};
 
 export default Showcase;

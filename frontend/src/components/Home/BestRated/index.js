@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { RestaurantInfo } from './style';
 import restaurantMockupImg from '../../../assets/images/restaurant-mockup.jpg';
 
-function RestaurantSingle() {
+const RestaurantSingle = () => {
 	return (
 		<Fragment>
 			<RestaurantInfo>

@@ -9,7 +9,7 @@ import {
 	FooterSocial,
 } from './style';
 
-function Footer() {
+const Footer = () => {
 	return (
 		<Container className='container'>
 			<FooterWrapper>

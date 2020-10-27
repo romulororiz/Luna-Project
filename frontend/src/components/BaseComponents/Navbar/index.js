@@ -4,7 +4,9 @@ import { Container } from '../../../style/theme';
 import { NavbarWrapper, NavbarLeft, NavbarRight, BtnsWrapper } from './style';
 import logo from '../../../assets/svgs/logo.svg';
 
-function Navbar() {
+const Navbar = () => {
+	// const [active, setActive] = useState(false);
+
 	return (
 		<Container>
 			<NavbarWrapper>
@@ -14,10 +16,20 @@ function Navbar() {
 					</Link>
 				</NavbarLeft>
 				<NavbarRight>
-					<Link className='homeLink active' to='/'>
+					<Link
+						// onClick={() => setActive('home')}
+						className='homeLink active'
+						to='/'
+					>
 						Home
 					</Link>
-					<Link className='searchLink' to='#'>
+					<Link
+						// onClick={() => {
+						// 	setActive('search');
+						// }}
+						className='searchLink' //change it to jsx dynamic
+						to='/search'
+					>
 						Search
 					</Link>
 					<Link className='profileLink' to='#'>
@@ -35,6 +47,6 @@ function Navbar() {
 			</NavbarWrapper>
 		</Container>
 	);
-}
+};
 
 export default Navbar;

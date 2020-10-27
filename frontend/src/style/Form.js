@@ -11,6 +11,19 @@ const Form = styled.input`
 	border: none;
 	outline: none;
 	position: relative;
+
+	${props => {
+		if (props.searchBar) {
+			return `
+			height: 100%;
+			border-radius: 0;
+			padding: .8rem;
+			background: #fff;
+			margin-left: 12px;
+			font-size: ${props.theme.fontNormal};
+			`;
+		}
+	}}
 `;
 
 export default Form;
