@@ -10,9 +10,6 @@ export const NavbarWrapper = styled.nav`
 
 export const NavbarLeft = styled.nav`
 	width: 60%;
-	.logo {
-		padding: 0.5rem 0 0.5rem 2rem;
-	}
 `;
 
 export const NavbarRight = styled.nav`
@@ -20,7 +17,7 @@ export const NavbarRight = styled.nav`
 	/* background-color: blue; */
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	height: 100%;
 	.homeLink,
 	.searchLink,
@@ -28,21 +25,21 @@ export const NavbarRight = styled.nav`
 		display: flex;
 		align-items: center;
 		font-size: ${props => props.theme.fontNormal};
-		color: rgba(0, 0, 0, 0.7);
+		color: ${props => props.theme.link};
 		padding: 0.5rem;
 		height: 100%;
 		/* background-color: green; */
 	}
 	.active {
 		border-bottom: 2px solid ${props => props.theme.orangeMain};
-		color: rgba(0, 0, 0, 0.9);
+		color: ${props => props.theme.linkActive};
 	}
 `;
 
 export const BtnsWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	.signUp,
 	.login {
 		padding: 0.8rem;
