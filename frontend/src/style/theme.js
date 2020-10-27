@@ -8,6 +8,14 @@ export const GlobalStyle = createGlobalStyle`
         font-family: Lato, Tahoma, sans-serif;
     } 
 
+	body {
+		background-color: #f2f2f2;
+		max-width: 1600px;
+		margin: 0 auto;
+		min-height: 100vh;
+}
+
+
     a{
         text-decoration: none;
     }
@@ -15,8 +23,6 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
 	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
 	@media (min-width: 576px) {
@@ -39,6 +45,17 @@ export const Container = styled.div`
 			max-width: 1140px;
 		}
 	}
+
+	${props => {
+		if (props.bestRated) {
+			return `
+			width: 90%;
+			margin: 50px auto;
+			display: flex;
+			justify-content: space-between;
+			`;
+		}
+	}}
 `;
 
 // fonts
@@ -50,5 +67,6 @@ export const fontExLarge = '2rem';
 
 // colors
 export const orangeMain = '#E47D31';
+export const yellowMain = '#F8E71C';
 export const link = 'rgba(0, 0, 0, 0.7);';
 export const linkActive = 'rgba(0, 0, 0, 0.9);';

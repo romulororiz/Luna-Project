@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '../../style/theme';
+import { Container } from '../../../style/theme';
 import { NavbarWrapper, NavbarLeft, NavbarRight, BtnsWrapper } from './style';
-import logo from '../../assets/svgs/logo.svg';
+import logo from '../../../assets/svgs/logo.svg';
 
 function Navbar() {
 	return (
-		<Container className='container'>
+		<Container>
 			<NavbarWrapper>
 				<NavbarLeft>
 					<Link to='/'>

@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-	height: 80px;
+	height: 120px;
 	width: 100%;
+	padding: 0 15px;
 	margin-top: 16px;
-	/* background-color: green; */
+	background-color: #fff !important;
 `;
 
 export const TopFooter = styled.footer`
 	display: flex;
 	height: 50%;
+	padding: 2rem 0;
 	/* background-color: blue; */
 `;
 
@@ -61,5 +63,6 @@ export const BottomFooter = styled.footer`
 	align-items: center;
 	justify-content: flex-start;
 	color: rgba(0, 0, 0, 0.55);
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
 	/* background-color: red; */
 `;

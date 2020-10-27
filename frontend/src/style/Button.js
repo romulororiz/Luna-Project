@@ -15,7 +15,7 @@ const Btn = styled.button`
 			color: #fff;
 			background: ${props.theme.orangeMain};
 			position: relative;
-			padding: 14px 50px;
+			padding: 12px 46px;
 			z-index: 1;
 			margin-left: 12px;
 			`;

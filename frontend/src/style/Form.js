@@ -5,7 +5,7 @@ const Form = styled.input`
 	border-radius: 4px;
 	padding: 1.2rem;
 	font-size: ${props => props.theme.fontMedium};
-	height: 50px;
+	height: 46px;
 	width: 30%;
 	z-index: 1;
 	border: none;

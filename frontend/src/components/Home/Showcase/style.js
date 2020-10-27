@@ -8,7 +8,7 @@ export const ShowcaseHome = styled.section`
 	background-attachment: fixed;
 	background-position: top center;
 	position: relative;
-	min-height: 600px;
+	min-height: 500px;
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -18,7 +18,7 @@ export const ShowcaseHome = styled.section`
 		position: absolute;
 		top: 0;
 		left: 0;
-		min-height: 600px;
+		min-height: 500px;
 		width: 100%;
 		background: rgba(0, 0, 0, 0.7);
 		z-index: 1;

@@ -8,8 +8,10 @@ function Showcase() {
 		<Fragment>
 			<ShowcaseHome>
 				<div className='overlay'></div>
-				<Form placeholder='Search...' />
-				<Btn showcase>Search</Btn>
+				<Form className='showcaseForm' placeholder='Search...' />
+				<Btn className='showcaseBtn' showcase>
+					Search
+				</Btn>
 			</ShowcaseHome>
 		</Fragment>
 	);
