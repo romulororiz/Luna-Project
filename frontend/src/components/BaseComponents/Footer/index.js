@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '../../style/theme';
+import { Container } from '../../../style/theme';
 import {
 	FooterWrapper,
 	TopFooter,
@@ -9,7 +9,7 @@ import {
 	FooterSocial,
 } from './style';
 
-function Footer() {
+const Footer = () => {
 	return (
 		<Container className='container'>
 			<FooterWrapper>
@@ -34,7 +34,7 @@ function Footer() {
 					<FooterSocial>
 						<i className='fab fa-facebook-f social-link'></i>
 						<i className='fab fa-twitter social-link'></i>
-						<i class='fab fa-google-plus-g social-link'></i>
+						<i className='fab fa-google-plus-g social-link'></i>
 						<i className='fab fa-instagram social-link'></i>
 					</FooterSocial>
 				</TopFooter>
