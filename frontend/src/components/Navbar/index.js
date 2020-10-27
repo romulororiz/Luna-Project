@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Container } from '../../style/theme';
 import { NavbarWrapper, NavbarLeft, NavbarRight, BtnsWrapper } from './style';
 import logo from '../../assets/svgs/logo.svg';
 
 function Navbar() {
 	return (
-		<Fragment>
+		<Container className='container'>
 			<NavbarWrapper>
 				<NavbarLeft>
 					<Link to='/'>
@@ -32,7 +33,7 @@ function Navbar() {
 					</BtnsWrapper>
 				</NavbarRight>
 			</NavbarWrapper>
-		</Fragment>
+		</Container>
 	);
 }
 
