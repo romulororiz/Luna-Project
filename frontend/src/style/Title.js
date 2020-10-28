@@ -4,7 +4,7 @@ export const Title = styled.section`
 	width: 100%;
 	text-align: center;
 	color: rgba(0, 0, 0, 0.55);
-	font-size: ${props => props.theme.fontMedium};
+	font-size: ${props => props.theme.fontLarge};
 	font-weight: bold;
 	/* background-color: yellow; */
 
@@ -66,4 +66,5 @@ export const Title = styled.section`
 		left: 25%;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 	} */
+	
 `;

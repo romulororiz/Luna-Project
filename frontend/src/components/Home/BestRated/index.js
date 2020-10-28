@@ -14,6 +14,7 @@ const RestaurantSingle = () => {
 						<i className='fas fa-star'></i>
 						<i className='fas fa-star'></i>
 						<i className='fas fa-star'></i>
+						<i className='fas fa-star'></i>
 						<span>68</span>
 					</p>
 				</div>

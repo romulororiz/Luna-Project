@@ -28,7 +28,7 @@ export const Container = styled.div`
 	${props => {
 		if (props.bestRated) {
 			return `
-			width: 90%;
+			width: 80%;
 			margin: 50px auto;
 			display: flex;
 			justify-content: space-between;
@@ -37,9 +37,9 @@ export const Container = styled.div`
 	}}
 
 	${props => {
-		if (props.searchRestaurant) {
+		if (props.Search) {
 			return `
-			width: 100%;
+			width: 90%;
 			margin: 0 auto;
 			display: flex;
 			flex-direction: row;

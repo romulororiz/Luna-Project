@@ -4,7 +4,7 @@ export const RestaurantInfo = styled.section`
 	height: 100%;
 	width: 25%;
 	max-width: 300px;
-	margin: 0 2% 2% 2%;
+	margin: 0 1% 1.5% 1%;
 	text-align: center;
 	background-color: #fff !important;
 	border-radius: 5px;
