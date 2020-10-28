@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 authurls = [
@@ -26,8 +28,15 @@ authurls = [
 
 urlpatterns = [
     path('api/', include('apps.users.urlsme')),
+    path('api/registration/', include('apps.registration.urls')),
     path('api/users/', include('apps.users.urls')),
     path('api/restaurants/', include('apps.restaurants.urls')),
+    path('api/reviews/', include('apps.reviews.urls')),
     path('api/auth/', include(authurls)),
     path('api/admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
