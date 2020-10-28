@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '../../../style/theme';
 import {
 	FooterWrapper,
 	TopFooter,
@@ -8,10 +7,11 @@ import {
 	FooterLinks,
 	FooterSocial,
 } from './style';
+import { Container } from '../../../style/Container';
 
 const Footer = () => {
 	return (
-		<Container className='container'>
+		<Container>
 			<FooterWrapper>
 				<TopFooter>
 					<FooterLinks>
@@ -42,6 +42,6 @@ const Footer = () => {
 			</FooterWrapper>
 		</Container>
 	);
-}
+};
 
 export default Footer;

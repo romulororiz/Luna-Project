@@ -17,9 +17,9 @@ const SearchBar = () => {
 						<span>
 							Select a category
 							<i
-								class={
+								className={
 									showDropdown ? 'fas fa-chevron-up' : 'fas fa-chevron-down'
-								} //fix chevron
+								}
 							></i>
 						</span>
 						<div className='dropdown-content'>

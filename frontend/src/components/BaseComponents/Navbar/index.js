@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '../../../style/theme';
 import { NavbarWrapper, NavbarLeft, NavbarRight, BtnsWrapper } from './style';
 import logo from '../../../assets/svgs/logo.svg';
+import { Container } from '../../../style/Container';
 
 const Navbar = () => {
 	// const [active, setActive] = useState(false);
