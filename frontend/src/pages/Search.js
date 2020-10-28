@@ -4,11 +4,11 @@ import Footer from '../components/BaseComponents/Footer';
 import SearchBar from '../components/Search/SearchBar';
 import { Title } from '../style/Title';
 import { Container } from '../style/Container';
-import RestaurantSingle from '../components/Home/BestRated';
 import ReviewSingle from '../components/Search/Reviews';
+import RestaurantSingle from '../components/Home/BestRated';
 
 const Search = () => {
-	const [active, setActive] = useState();
+	const [active, setActive] = useState('restaurants');
 
 	return (
 		<Container>
@@ -16,24 +16,61 @@ const Search = () => {
 			<SearchBar />
 			<Title>
 				<div className='search-navigation-links'>
-					<p className='search-link'>Restaurants</p>
-					<p onClick={() => setActive('review')} className='search-link'>
+					<p
+						onClick={() => {
+							setActive('restaurants');
+						}}
+						className='search-link'
+					>
+						Restaurants
+					</p>
+					<p
+						onClick={() => {
+							setActive('reviews');
+						}}
+						className='search-link'
+					>
 						Reviews
 					</p>
-					<p className='search-link'>Users</p>
+					<p
+						onClick={() => {
+							setActive('users');
+						}}
+						className='search-link'
+					>
+						Users
+					</p>
 				</div>
 			</Title>
-			<Container searchRestaurant>
-				<RestaurantSingle />
-				<RestaurantSingle />
-				<RestaurantSingle />
-				<RestaurantSingle />
-				<RestaurantSingle />
-				<RestaurantSingle />
-				<RestaurantSingle />
-				<RestaurantSingle />
-			</Container>
-			{/* {active === 'review' ? <ReviewSingle /> : null} */}
+
+			{active === 'restaurants' ? (
+				<Container Search>
+					<RestaurantSingle />
+					<RestaurantSingle />
+					<RestaurantSingle />
+					<RestaurantSingle />
+					<RestaurantSingle />
+					<RestaurantSingle />
+					<RestaurantSingle />
+					<RestaurantSingle />
+				</Container>
+			) : null}
+
+			{active === 'reviews' ? (
+				<Container Search>
+					<ReviewSingle />
+					<ReviewSingle />
+					<ReviewSingle />
+					<ReviewSingle />
+					<ReviewSingle />
+					<ReviewSingle />
+					<ReviewSingle />
+					<ReviewSingle />
+				</Container>
+			) : null}
+
+			{active === 'users' ? <h1>Ola</h1> : null}
+
 			<Footer />
 		</Container>
 	);
