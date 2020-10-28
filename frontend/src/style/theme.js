@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -21,42 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Container = styled.div`
-	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	@media (min-width: 576px) {
-		.container {
-			max-width: 540px;
-		}
-	}
-	@media (min-width: 768px) {
-		.container {
-			max-width: 720px;
-		}
-	}
-	@media (min-width: 992px) {
-		.container {
-			max-width: 960px;
-		}
-	}
-	@media (min-width: 1200px) {
-		.container {
-			max-width: 1140px;
-		}
-	}
-
-	${props => {
-		if (props.bestRated) {
-			return `
-			width: 90%;
-			margin: 50px auto;
-			display: flex;
-			justify-content: space-between;
-			`;
-		}
-	}}
-`;
 
 // fonts
 export const fontSmall = '.6rem';
