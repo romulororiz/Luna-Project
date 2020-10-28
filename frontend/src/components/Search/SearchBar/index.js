@@ -8,7 +8,7 @@ const SearchBar = () => {
 	return (
 		<Fragment>
 			<SearchBarWrapper>
-				<Form searchBar placeholder='Search restaurants...' />
+				<Form className='hide-on-focus' searchBar placeholder='Search restaurants...' />
 				<CategoryField
 					onMouseEnter={() => setShowDropdown(value => !value)}
 					onMouseLeave={() => setShowDropdown(value => !value)}
@@ -24,7 +24,9 @@ const SearchBar = () => {
 						</span>
 						<div className='dropdown-content'>
 							<p>Mexican</p>
-							<p>Italian</p>
+							<p>Brazilian</p>
+							<p>Indian</p>
+							<p>Chilean</p>
 						</div>
 					</div>
 				</CategoryField>

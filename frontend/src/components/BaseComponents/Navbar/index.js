@@ -5,7 +5,7 @@ import logo from '../../../assets/svgs/logo.svg';
 import { Container } from '../../../style/Container';
 
 const Navbar = () => {
-	// const [active, setActive] = useState(false);
+	// const [active, setActive] = useState('home');
 
 	return (
 		<Container>
@@ -18,6 +18,7 @@ const Navbar = () => {
 				<NavbarRight>
 					<Link
 						// onClick={() => setActive('home')}
+						// className={active === 'home' ? 'homeLink active' : 'homeLink'}
 						className='homeLink active'
 						to='/'
 					>
@@ -27,7 +28,8 @@ const Navbar = () => {
 						// onClick={() => {
 						// 	setActive('search');
 						// }}
-						className='searchLink' //change it to jsx dynamic
+						// className={active === 'search' ? 'homeLink active' : 'homeLink'} //change it to jsx dynamic
+						className='searchLink'
 						to='/search'
 					>
 						Search
