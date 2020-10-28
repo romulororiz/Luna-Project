@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.mail import send_mail
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView
@@ -26,6 +27,13 @@ class CreateRestaurantAPIView(CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
+        send_mail(
+            'New Post bro',
+            'You have a new post',
+            'LunaCapricornSup@gmail.com',
+            ['markusgig@gmail.com'],
+            fail_silently=False,
+        )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 

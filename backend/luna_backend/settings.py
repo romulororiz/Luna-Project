@@ -36,10 +36,13 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_countries',
     'phone_field',
+    'fullurl',
 
     #own apps
     'apps.users',
     'apps.restaurants',
+    'apps.reviews',
+    'apps.registration',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +149,11 @@ SIMPLE_JWT = {
 AUTH_USER_MODEL = 'users.User'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+

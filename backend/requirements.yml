@@ -10,6 +10,8 @@ dependencies:
       - gunicorn
       - flake8
       - django-cors-headers
+      - django-extensions==2.2.5
+      - django-fullurl
       - django-countries
       - django-phone-field
       - Pillow
