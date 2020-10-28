@@ -5,6 +5,7 @@ import SearchBar from '../components/Search/SearchBar';
 import { Title } from '../style/Title';
 import { Container } from '../style/Container';
 import ReviewSingle from '../components/Search/Reviews';
+import UserSingle from '../components/Search/Users';
 import RestaurantSingle from '../components/Home/BestRated';
 
 const Search = () => {
@@ -69,7 +70,18 @@ const Search = () => {
 				</Container>
 			) : null}
 
-			{active === 'users' ? <h1>Ola</h1> : null}
+			{active === 'users' ? (
+				<Container Search>
+					<UserSingle />
+					<UserSingle />
+					<UserSingle />
+					<UserSingle />
+					<UserSingle />
+					<UserSingle />
+					<UserSingle />
+					<UserSingle />
+				</Container>
+			) : null}
 
 			<Footer />
 		</Container>

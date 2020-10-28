@@ -32,39 +32,38 @@ export const Title = styled.section`
 
 	/* Search Page */
 	.search-navigation-links {
-		width: 30%;
+		width: 50%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		margin: 40px auto;
 		font-weight: bold;
 		text-transform: uppercase;
-		padding-bottom: 8px;
+		padding-bottom: 10px;
 		position: relative;
 		/* background-color: green; */
 	}
-
 	.search-link {
 		cursor: pointer;
 	}
 
-	/* .search-navigation-links:before {
+	.search-navigation-links:before {
 		content: '';
 		position: absolute;
-		width: 55%;
+		width: 30%;
 		height: 1px;
 		bottom: 0;
-		left: 25%;
+		left: 40px;
 		border-bottom: 2px solid ${props => props.theme.orangeMain};
-	} */
-	/* .search-navigation-links:after {
+	}
+
+	.search-navigation-links:after {
 		content: '';
 		position: absolute;
 		width: 100%;
-		height: 1px;
+		height: 2px;
 		bottom: -1px;
-		left: 25%;
+		left: 0;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-	} */
-	
+	}
 `;

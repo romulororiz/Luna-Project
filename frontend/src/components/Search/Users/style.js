@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ReviewInfo = styled.section`
+export const UserInfo = styled.section`
 	height: 100%;
 	width: 25%;
 	max-width: 300px;
@@ -47,7 +47,7 @@ export const ReviewInfo = styled.section`
 		}
 	}
 
-	.user-review {
+	.user-bio {
 		padding: 0.8rem;
 		text-align: left;
 		p {
@@ -105,7 +105,7 @@ export const ReviewInfo = styled.section`
 		}
 	}
 
-	.user-comment {
+	.user-comments {
 		padding: 0.4rem;
 		p {
 			margin: 0.1rem 0;
