@@ -19,8 +19,7 @@ const Form = styled.input`
 			border-radius: 0;
 			padding: .8rem;
 			background: #fff;
-			margin-left: 12px;
-			font-size: ${props.theme.fontNormal};
+				font-size: ${props.theme.fontNormal};
 			`;
 		}
 	}}

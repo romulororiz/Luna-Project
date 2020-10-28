@@ -4,10 +4,13 @@ export const RestaurantInfo = styled.section`
 	height: 100%;
 	width: 25%;
 	max-width: 300px;
-	margin: 0 2%;
+	margin: 0 1% 1.5% 1%;
 	text-align: center;
 	background-color: #fff !important;
 	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 32px -9px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 32px -9px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 32px -9px rgba(0, 0, 0, 0.75);
 
 	.restaurant-info {
 		padding: 0.8rem;

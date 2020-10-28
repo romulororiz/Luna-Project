@@ -10,10 +10,11 @@ const RestaurantSingle = () => {
 					<p>Restaurant Name</p>
 					<p>Address</p>
 					<p className='ratings'>
-						<i class='fas fa-star'></i>
-						<i class='fas fa-star'></i>
-						<i class='fas fa-star'></i>
-						<i class='fas fa-star'></i>
+						<i className='fas fa-star'></i>
+						<i className='fas fa-star'></i>
+						<i className='fas fa-star'></i>
+						<i className='fas fa-star'></i>
+						<i className='fas fa-star'></i>
 						<span>68</span>
 					</p>
 				</div>
@@ -25,6 +26,6 @@ const RestaurantSingle = () => {
 			</RestaurantInfo>
 		</Fragment>
 	);
-}
+};
 
 export default RestaurantSingle;

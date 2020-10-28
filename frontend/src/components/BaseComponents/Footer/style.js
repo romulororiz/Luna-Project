@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-	height: 120px;
+	height: 100px;
 	width: 100%;
-	padding: 0 15px;
 	margin-top: 16px;
 	background-color: #fff !important;
 `;
 
 export const TopFooter = styled.footer`
 	display: flex;
+	width: 100%;
 	height: 50%;
-	padding: 2rem 0;
+	padding: 1.6rem 0.8rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
 	/* background-color: blue; */
 `;
 
@@ -41,12 +43,12 @@ export const FooterSocial = styled.div`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: 0 14px;
-		width: 40px;
-		height: 40px;
-		padding: 12px;
+		margin: 0 10px;
+		width: 32px;
+		height: 32px;
+		padding: 8px;
 		border-radius: 50%;
-		font-size: ${props => props.theme.fontMedium};
+		font-size: ${props => props.theme.fontNormal};
 		background-color: #fff;
 		border: 1.5px solid rgba(0, 0, 0, 0.45);
 		color: rgba(0, 0, 0, 0.45);
@@ -60,9 +62,9 @@ export const FooterSocial = styled.div`
 export const BottomFooter = styled.footer`
 	height: 50%;
 	display: flex;
-	align-items: center;
+	font-size: 0.7rem;
 	justify-content: flex-start;
 	color: rgba(0, 0, 0, 0.55);
-	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	padding: 1rem 0.8rem;
 	/* background-color: red; */
 `;

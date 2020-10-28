@@ -21,6 +21,36 @@ const Btn = styled.button`
 			`;
 		}
 	}}
+
+	${props => {
+		if (props.btnLike) {
+			return `
+			background: #b3b3b3;
+			font-size: 1rem;
+			color: #fff;
+			border: 1px solid #fff;
+			padding: 8px 15px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			`;
+		}
+	}}
+
+	${props => {
+		if (props.btnComment) {
+			return `
+			background: #b3b3b3;
+			font-size: 1rem;
+			color: #fff;
+			padding: 8px 15px;
+			border: 1px solid #fff;
+			outline: none;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			cursor: pointer;
+			`;
+		}
+	}}
 `;
 
 export default Btn;
