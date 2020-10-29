@@ -37,7 +37,6 @@ class Restaurant(models.Model):
     image = models.ImageField(upload_to='', blank=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='restaurants')
     openhours = models.CharField(max_length=100, blank=True)
-    #def openinghours(self):
 
 
     def __str__(self):

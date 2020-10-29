@@ -27,13 +27,14 @@ authurls = [
 ]
 
 urlpatterns = [
-    path('api/', include('apps.users.urlsme')),
-    path('api/registration/', include('apps.registration.urls')),
-    path('api/users/', include('apps.users.urls')),
-    path('api/restaurants/', include('apps.restaurants.urls')),
-    path('api/reviews/', include('apps.reviews.urls')),
-    path('api/auth/', include(authurls)),
-    path('api/admin/', admin.site.urls),
+    path('backend/api/', include('apps.users.urlsme')),
+    path('backend/api/home/', include('apps.restaurants.urlshome')),
+    path('backend/api/registration/', include('apps.registration.urls')),
+    path('backend/api/users/', include('apps.users.urls')),
+    path('backend/api/restaurants/', include('apps.restaurants.urls')),
+    path('backend/api/reviews/', include('apps.reviews.urls')),
+    path('backend/api/auth/', include(authurls)),
+    path('backend/api/admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:

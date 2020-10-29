@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView, RetrieveAPIView
 
 from apps.restaurants.models import Restaurant
 from apps.restaurants.serializers import RestaurantSerializer, RestaurantSmallSerializer
@@ -66,3 +66,9 @@ class ListRestaurantCategoryAPIView(ListAPIView):
         queryset = self.get_queryset().filter(category=kwargs['category_id'])
         detailed_serializer = RestaurantSmallSerializer(queryset, many=True)
         return Response(detailed_serializer.data)
+
+
+class ListBestRestaurantAPIView(ListAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+    permission_classes = []

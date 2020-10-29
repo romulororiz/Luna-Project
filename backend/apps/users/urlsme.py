@@ -1,9 +1,6 @@
 from django.urls import path
-import sys
-
-
-from apps.users.views import ListMe
+from apps.users.views import RetrieveUpdateMeAPIView
 
 urlpatterns = [
-    path('', ListMe.as_view()),
+    path('me/', RetrieveUpdateMeAPIView.as_view()),
 ]
