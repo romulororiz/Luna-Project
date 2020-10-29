@@ -28,10 +28,11 @@ export const Container = styled.div`
 	${props => {
 		if (props.bestRated) {
 			return `
-			width: 80%;
+			width: 90%;
 			margin: 50px auto;
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
+			flex-wrap: wrap; 
 			`;
 		}
 	}}
@@ -45,6 +46,35 @@ export const Container = styled.div`
 			flex-direction: row;
 			justify-content: center;
 			flex-wrap: wrap;
+			`;
+		}
+	}}
+	
+	${props => {
+		if (props.restaurantProfile) {
+			return `
+			width: 90%;
+			margin: 0 auto;
+			.reviews-info {
+				/* background-color: blue; */
+				margin: 20px 0;
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				text-align: center;
+			}
+			.reviews-profile-page {
+				width: 50%;
+			}
+			.filter-section {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			
+			.info-profile-page {
+				width: 50%;
+			}
 			`;
 		}
 	}}

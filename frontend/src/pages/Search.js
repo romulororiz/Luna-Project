@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Navbar from '../components/BaseComponents/Navbar';
 import Footer from '../components/BaseComponents/Footer';
 import SearchBar from '../components/Search/SearchBar';
@@ -7,9 +8,43 @@ import { Container } from '../style/Container';
 import ReviewSingle from '../components/Search/Reviews';
 import UserSingle from '../components/Search/Users';
 import RestaurantSingle from '../components/Home/BestRated';
+import restaurantAction from '../store/Actions/restaurantAction';
+import reviewAction from '../store/Actions/reviewAction';
+import userAction from '../store/Actions/userAction';
 
 const Search = () => {
+	const dispatch = useDispatch();
 	const [active, setActive] = useState('restaurants');
+	const [restaurants, setRestaurants] = useState([]);
+	const [reviews, setReviews] = useState([]);
+	const [users, setUsers] = useState([]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(restaurantAction());
+			console.log(data);
+			setRestaurants(data);
+		};
+		getData();
+	}, []);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(reviewAction());
+			console.log(data);
+			setReviews(data);
+		};
+		getData();
+	}, []);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(userAction());
+			console.log(data);
+			setUsers(data);
+		};
+		getData();
+	}, []);
 
 	return (
 		<Container>
@@ -46,40 +81,35 @@ const Search = () => {
 
 			{active === 'restaurants' ? (
 				<Container Search>
-					<RestaurantSingle />
-					<RestaurantSingle />
-					<RestaurantSingle />
-					<RestaurantSingle />
-					<RestaurantSingle />
-					<RestaurantSingle />
-					<RestaurantSingle />
-					<RestaurantSingle />
+					{restaurants.length ? (
+						restaurants.map(restaurant => (
+							<RestaurantSingle restaurant={restaurant} key={restaurant.id} />
+						))
+					) : (
+						<h3>Loading...</h3>
+					)}
 				</Container>
 			) : null}
 
 			{active === 'reviews' ? (
 				<Container Search>
-					<ReviewSingle />
-					<ReviewSingle />
-					<ReviewSingle />
-					<ReviewSingle />
-					<ReviewSingle />
-					<ReviewSingle />
-					<ReviewSingle />
-					<ReviewSingle />
+					{reviews.length ? (
+						reviews.map(review => (
+							<ReviewSingle review={review} key={review.id} />
+						))
+					) : (
+						<h3>Loading...</h3>
+					)}
 				</Container>
 			) : null}
 
 			{active === 'users' ? (
 				<Container Search>
-					<UserSingle />
-					<UserSingle />
-					<UserSingle />
-					<UserSingle />
-					<UserSingle />
-					<UserSingle />
-					<UserSingle />
-					<UserSingle />
+					{users.length ? (
+						users.map(user => <UserSingle user={user} key={user.id} />)
+					) : (
+						<h3>Loading...</h3>
+					)}
 				</Container>
 			) : null}
 

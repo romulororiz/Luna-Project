@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	body {
 		background-color: #f2f2f2;
-		max-width: 1600px;
+		/*max-width: 1600px;*/
 		margin: 0 auto;
 		min-height: 100vh;
 }
@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 `;
-
 
 // fonts
 export const fontSmall = '.6rem';
