@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarWrapper, NavbarLeft, NavbarRight, BtnsWrapper } from './style';
 import logo from '../../../assets/svgs/logo.svg';
 import { Container } from '../../../style/Container';
 
 const Navbar = () => {
-	// const [active, setActive] = useState('home');
+	const [active, setActive] = useState('home');
 
 	return (
 		<Container>
@@ -17,24 +17,26 @@ const Navbar = () => {
 				</NavbarLeft>
 				<NavbarRight>
 					<Link
-						// onClick={() => setActive('home')}
-						// className={active === 'home' ? 'homeLink active' : 'homeLink'}
-						className='homeLink active'
+						className={active === 'home' ? 'homeLink active' : 'homeLink'}
+						onClick={() => setActive('home')}
 						to='/'
 					>
 						Home
 					</Link>
 					<Link
-						// onClick={() => {
-						// 	setActive('search');
-						// }}
-						// className={active === 'search' ? 'homeLink active' : 'homeLink'} //change it to jsx dynamic
-						className='searchLink'
+						className={active === 'search' ? 'searchLink active' : 'searchLink'}
+						onClick={() => setActive('search')}
 						to='/search'
 					>
 						Search
 					</Link>
-					<Link className='profileLink' to='#'>
+					<Link
+						className={
+							active === 'profile' ? 'profileLink active' : 'profileLink'
+						}
+						onClick={() => setActive('profile')}
+						to='#'
+					>
 						Profile
 					</Link>
 					<BtnsWrapper>

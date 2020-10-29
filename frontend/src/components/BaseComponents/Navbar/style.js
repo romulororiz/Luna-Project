@@ -31,9 +31,18 @@ export const NavbarRight = styled.nav`
 		padding: 0.5rem;
 		height: 100%;
 		/* background-color: green; */
+		border-bottom: 3px solid transparent;
 	}
+
+	.homeLink:hover,
+	.searchLink:hover,
+	.profileLink:hover {
+		border-bottom: 3px solid ${props => props.theme.orangeMain};
+		transition: linear .09s;
+	}
+
 	.active {
-		border-bottom: 2px solid ${props => props.theme.orangeMain};
+		border-bottom: 3px solid ${props => props.theme.orangeMain};
 		color: ${props => props.theme.linkActive};
 	}
 `;

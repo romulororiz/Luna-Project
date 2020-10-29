@@ -11,6 +11,7 @@ import RestaurantSingle from '../components/Home/BestRated';
 import restaurantAction from '../store/Actions/restaurantAction';
 import reviewAction from '../store/Actions/reviewAction';
 import userAction from '../store/Actions/userAction';
+import Spinner from '../components/BaseComponents/Spinner';
 
 const Search = () => {
 	const dispatch = useDispatch();
@@ -56,7 +57,9 @@ const Search = () => {
 						onClick={() => {
 							setActive('restaurants');
 						}}
-						className='search-link'
+						className={
+							active === 'restaurants' ? 'search-link active' : 'search-link'
+						}
 					>
 						Restaurants
 					</p>
@@ -64,7 +67,9 @@ const Search = () => {
 						onClick={() => {
 							setActive('reviews');
 						}}
-						className='search-link'
+						className={
+							active === 'reviews' ? 'search-link active' : 'search-link'
+						}
 					>
 						Reviews
 					</p>
@@ -72,7 +77,9 @@ const Search = () => {
 						onClick={() => {
 							setActive('users');
 						}}
-						className='search-link'
+						className={
+							active === 'users' ? 'search-link active' : 'search-link'
+						}
 					>
 						Users
 					</p>
@@ -86,7 +93,7 @@ const Search = () => {
 							<RestaurantSingle restaurant={restaurant} key={restaurant.id} />
 						))
 					) : (
-						<h3>Loading...</h3>
+						<Spinner />
 					)}
 				</Container>
 			) : null}
@@ -98,7 +105,7 @@ const Search = () => {
 							<ReviewSingle review={review} key={review.id} />
 						))
 					) : (
-						<h3>Loading...</h3>
+						<Spinner />
 					)}
 				</Container>
 			) : null}
@@ -108,7 +115,7 @@ const Search = () => {
 					{users.length ? (
 						users.map(user => <UserSingle user={user} key={user.id} />)
 					) : (
-						<h3>Loading...</h3>
+						<Spinner />
 					)}
 				</Container>
 			) : null}
