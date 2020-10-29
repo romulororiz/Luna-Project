@@ -14,11 +14,10 @@ class UserAdmin(UserAdmin):
     )
     fieldsets = (
         (None, {'fields': ('email', 'username', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'location', 'things_love', 'phone', 'description', 'profile_picture')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Groups', {'fields': ('groups',)}),
-        ('Social', {'fields': ('avatar', 'banner', 'location', 'about_me', 'job', 'followees', 'liked_posts')}),
     )
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     ordering = ('email',)

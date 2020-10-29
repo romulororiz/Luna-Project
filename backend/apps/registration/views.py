@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
@@ -5,13 +6,10 @@ from rest_framework.response import Response
 
 from apps.registration.serializers import RegistrationSerializer
 
+User = get_user_model()
 
 
 class RegistrationView(GenericAPIView):
-    """
-    post:
-    Create a non active user with email info only.
-    """
     serializer_class = RegistrationSerializer
     permission_classes = []
     authentication_classes = []
