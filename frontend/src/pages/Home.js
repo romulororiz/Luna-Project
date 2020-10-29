@@ -8,6 +8,7 @@ import { Title } from '../style/Title';
 import RestaurantSingle from '../components/Home/BestRated';
 import { Container } from '../style/Container';
 import restaurantAction from '../store/Actions/restaurantAction';
+import Spinner from '../components/BaseComponents/Spinner';
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const Home = () => {
 						<RestaurantSingle restaurant={restaurant} key={restaurant.id} />
 					))
 				) : (
-					<h3>Loading...</h3>
+					<Spinner />
 				)}
 			</Container>
 			<Footer />

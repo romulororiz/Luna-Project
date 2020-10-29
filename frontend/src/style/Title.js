@@ -16,11 +16,9 @@ export const Title = styled.section`
 		width: 20%;
 		text-transform: uppercase;
 		position: relative;
-		/* background-color: green; */
 	}
 
 	.title-best-rated:before {
-		/* background-color: red; */
 		content: '';
 		position: absolute;
 		width: 55%;
@@ -44,17 +42,19 @@ export const Title = styled.section`
 		/* background-color: green; */
 	}
 	.search-link {
+		border-bottom: 4px solid transparent;
+		padding: 4px 20px;
 		cursor: pointer;
 	}
 
-	.search-navigation-links:before {
-		content: '';
-		position: absolute;
-		width: 30%;
-		height: 1px;
-		bottom: 0;
-		left: 40px;
-		border-bottom: 2px solid ${props => props.theme.orangeMain};
+	.search-link:hover {
+		border-bottom: 4px solid ${props => props.theme.orangeMain};
+		transition: linear 0.12s;
+	}
+
+	.active {
+		border-bottom: 3px solid ${props => props.theme.orangeMain};
+		color: ${props => props.theme.linkActive};
 	}
 
 	.search-navigation-links:after {
@@ -62,7 +62,7 @@ export const Title = styled.section`
 		position: absolute;
 		width: 100%;
 		height: 2px;
-		bottom: -1px;
+		bottom: 9px;
 		left: 0;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 	}

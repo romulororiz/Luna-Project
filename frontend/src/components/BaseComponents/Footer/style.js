@@ -13,8 +13,6 @@ export const TopFooter = styled.footer`
 	height: 50%;
 	padding: 1.6rem 0.8rem;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-
-	/* background-color: blue; */
 `;
 
 export const FooterLinks = styled.div`
@@ -22,11 +20,15 @@ export const FooterLinks = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	/* background-color: yellow; */
+
 	.footer-link {
 		font-size: ${props => props.theme.fontNormal};
 		color: ${props => props.theme.link};
 		margin: 0 14px;
+		:hover {
+			color: ${props => props.theme.linkActive};
+			transition: linear 0.12s;
+		}
 	}
 	.footer-link:nth-child(1) {
 		margin-left: 0;
@@ -38,7 +40,6 @@ export const FooterSocial = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	/* background-color: blue; */
 	.social-link {
 		display: flex;
 		align-items: center;
@@ -51,8 +52,13 @@ export const FooterSocial = styled.div`
 		font-size: ${props => props.theme.fontNormal};
 		background-color: #fff;
 		border: 1.5px solid rgba(0, 0, 0, 0.45);
-		color: rgba(0, 0, 0, 0.45);
+		color: ${props => props.theme.link};
 		cursor: pointer;
+		:hover {
+			color: ${props => props.theme.linkActive};
+			transition: linear 0.12s;
+			border: 1.5px solid ${props => props.theme.linkActive};
+		}
 	}
 	.social-link:nth-child(4) {
 		margin-right: 0;
@@ -66,5 +72,4 @@ export const BottomFooter = styled.footer`
 	justify-content: flex-start;
 	color: rgba(0, 0, 0, 0.55);
 	padding: 1rem 0.8rem;
-	/* background-color: red; */
 `;
