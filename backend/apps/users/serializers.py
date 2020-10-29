@@ -6,6 +6,10 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
+    reviews = serializers.SerializerMethodField()
+
+    def get_reviews(self, user):
+        return user.fk_reviews.all().count()
 
     class Meta:
         model = User
