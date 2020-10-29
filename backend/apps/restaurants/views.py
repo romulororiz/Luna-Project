@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView, RetrieveAPIView
 
 from apps.restaurants.models import Restaurant
-from apps.restaurants.serializers import RestaurantSerializer, RestaurantSmallSerializer
+from apps.restaurants.serializers import RestaurantSerializer, RestaurantSmallSerializer, TopRestaurantSerializer
 
 from apps.restaurants.permissions import IsAuthorOrReadOnly
 
@@ -28,8 +28,8 @@ class CreateRestaurantAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
         send_mail(
-            'New Post bro',
-            'You have a new post',
+            'New Restaurant bro',
+            'You made a new restaurant',
             'LunaCapricornSup@gmail.com',
             ['markusgig@gmail.com'],
             fail_silently=False,
@@ -72,3 +72,8 @@ class ListBestRestaurantAPIView(ListAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     permission_classes = []
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        detailed_serializer = TopRestaurantSerializer(queryset, many=True)
+        return Response(detailed_serializer.data)
