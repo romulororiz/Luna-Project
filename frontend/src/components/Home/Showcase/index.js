@@ -8,7 +8,7 @@ const Showcase = () => {
 		<Fragment>
 			<ShowcaseHome>
 				<div className='overlay'></div>
-				<Form className='showcaseForm' placeholder='Search...' />
+				<Form placeholder='Search...' />
 				<Btn className='showcaseBtn' showcase>
 					Search
 				</Btn>

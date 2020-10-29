@@ -3,34 +3,23 @@ import { ReviewInfo } from './style';
 import avatar from '../../../assets/images/avatar.png';
 import Btn from '../../../style/Button';
 
-const ReviewSingle = () => {
+const ReviewSingle = ({ review }) => {
+	
+	const fullName = `${review.user.first_name} ${review.user.last_name}`;
+
 	return (
 		<Fragment>
 			<ReviewInfo>
 				<section className='user-info'>
 					<img className='avatar' src={avatar} alt='' />
 					<div className='user-details'>
-						<p>User Name</p>
-						<p>User total reviews</p>
+						<p>{fullName}</p>
+						<p>Total reviews user</p>
 					</div>
 				</section>
 				<div className='user-review'>
-					<p>Restaurant Name</p>
-					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
-						tempore ipsa cum ex officia debitis illum, placeat reiciendis.
-						Porro, vel. Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. Porro tempore ipsa cum ex officia debitis illum, placeat
-						reiciendis. Porro, vel.Lorem, ipsum dolor sit amet consectetur
-						adipisicing elit. Porro tempore ipsa cum ex officia debitis illum,
-						placeat reiciendis. Porro, vel. Lorem, ipsum dolor sit amet
-						consectetur adipisicing elit. Porro tempore ipsa cum ex officia
-						debitis illum, placeat reiciendis. Porro, vel.Lorem, ipsum dolor sit
-						amet consectetur adipisicing elit. Porro tempore ipsa cum ex officia
-						debitis illum, placeat reiciendis. Porro, vel. Lorem, ipsum dolor
-						sit amet consectetur adipisicing elit. Porro tempore ipsa cum ex
-						officia debitis illum, placeat reiciendis. Porro, vel.
-					</p>
+					<p>{review.restaurant.name}</p>
+					<p>{review.text_content}</p>
 				</div>
 				<section className='action-buttons'>
 					<Btn btnLike>

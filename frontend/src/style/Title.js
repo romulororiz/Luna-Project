@@ -10,7 +10,7 @@ export const Title = styled.section`
 
 	/* HomePage */
 	.title-best-rated {
-		margin: 40px auto;
+		margin: 60px auto;
 		text-align: center;
 		padding-bottom: 8px;
 		width: 20%;
@@ -36,7 +36,7 @@ export const Title = styled.section`
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-		margin: 40px auto;
+		margin: 60px auto;
 		font-weight: bold;
 		text-transform: uppercase;
 		padding-bottom: 10px;

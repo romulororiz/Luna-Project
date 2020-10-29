@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-export const ReviewInfo = styled.section`
-	height: 100%;
-	width: 25%;
-	max-width: 300px;
-	margin: 0 1% 1.5% 1%;
+export const ReviewRestaurantProfile = styled.section`
+	/* height: 100%; */
+	margin: 4% 0;
+	width: 100%;
 	text-align: center;
 	background-color: #fff !important;
 	border-radius: 5px;
@@ -12,7 +11,7 @@ export const ReviewInfo = styled.section`
 	-moz-box-shadow: 0px 0px 32px -9px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px 0px 32px -9px rgba(0, 0, 0, 0.75);
 
-	.user-info {
+	.user-info-restaurant-profile {
 		text-align: left;
 		border-top: 5px solid ${props => props.theme.orangeMain};
 		border-top-left-radius: 5px;
@@ -22,16 +21,32 @@ export const ReviewInfo = styled.section`
 		border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 
 		.avatar {
-			width: 30%;
-			height: 30%;
+			width: 20%;
+			height: 2 0%;
 		}
 
 		p:nth-child(1) {
 			font-size: ${props => props.theme.fontMedium};
 		}
+		.ratings {
+			display: flex;
+			align-items: center;
+			padding: 0 1.5rem;
+			i {
+				margin: 0 0.2rem;
+				font-size: ${props => props.theme.fontLarge};
+				color: ${props => props.theme.yellowMain};
+			}
+		}
+		.review-timestamp {
+			padding: 0.8rem;
+			width: 30%;
+			display: flex;
+			justify-content: flex-end;
+		}
 	}
 
-	.user-details {
+	.user-details-restaurant-profile {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -47,19 +62,12 @@ export const ReviewInfo = styled.section`
 		}
 	}
 
-	.user-review {
+	.user-review-restaurant-profile {
 		padding: 0.8rem;
 		text-align: left;
+
 		p {
 			margin: 0.4rem 0;
-		}
-		p:nth-child(1) {
-			font-size: ${props => props.theme.fontMedium};
-			color: ${props => props.theme.orangeMain};
-			font-weight: bold;
-		}
-
-		p:nth-child(2) {
 			padding: 0.9rem;
 			width: 100%;
 			height: 110px;
@@ -83,12 +91,11 @@ export const ReviewInfo = styled.section`
 		}
 	}
 
-	.action-buttons {
+	/* .action-buttons {
 		display: flex;
 		margin-bottom: 1rem;
 		margin-top: -0.1rem;
 		flex-direction: row;
-		/* background-color: red; */
 		justify-content: center;
 		i,
 		span {
@@ -117,5 +124,5 @@ export const ReviewInfo = styled.section`
 		p:nth-child(2) {
 			margin-top: 0.3rem;
 		}
-	}
+	} */
 `;

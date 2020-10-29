@@ -1,26 +1,30 @@
 import React, { Fragment } from 'react';
 import { RestaurantInfo } from './style';
-import restaurantMockupImg from '../../../assets/images/restaurant-mockup.jpg';
+import StarRatings from 'react-star-ratings';
 
-const RestaurantSingle = () => {
+const RestaurantSingle = ({ restaurant }) => {
 	return (
 		<Fragment>
 			<RestaurantInfo>
 				<div className='restaurant-info'>
-					<p>Restaurant Name</p>
-					<p>Address</p>
+					<p>{restaurant.name}</p>
+					<p>{restaurant.street}</p>
+					<p>{restaurant.city}</p>
+					<p>{restaurant.zip_code}</p>
 					<p className='ratings'>
-						<i className='fas fa-star'></i>
-						<i className='fas fa-star'></i>
-						<i className='fas fa-star'></i>
-						<i className='fas fa-star'></i>
-						<i className='fas fa-star'></i>
-						<span>68</span>
+						<StarRatings
+							rating={restaurant.average_rating}
+							starDimension='22px'
+							starSpacing='3px'
+							starRatedColor='#E47D31'
+							starEmptyColor='#c3c3c3'
+						/>
+						<span>{restaurant.reviews}</span>
 					</p>
 				</div>
 				<img
 					className='restaurantMockupImg'
-					src={restaurantMockupImg}
+					src={restaurant.image}
 					alt='restaurant'
 				/>
 			</RestaurantInfo>

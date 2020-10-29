@@ -17,6 +17,9 @@ export const RestaurantInfo = styled.section`
 		text-align: left;
 		border-radius: 5px;
 		border-top: 5px solid ${props => props.theme.orangeMain};
+		.ratings {
+			margin: 12px 0;
+		}
 		p {
 			margin: 6px 0;
 			i {
@@ -32,13 +35,20 @@ export const RestaurantInfo = styled.section`
 		}
 
 		p:nth-child(1) {
-			font-size: ${props => props.theme.fontMedium};
+			font-size: ${props => props.theme.fontLarge};
+		}
+		.address {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
 		}
 	}
 
 	.restaurantMockupImg {
-		width: 100%;
-		height: 100%;
+		width: auto;
+		height: auto;
+		max-height: 250px;
+		max-width: 100%;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 	}

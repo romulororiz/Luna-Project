@@ -51,6 +51,19 @@ const Btn = styled.button`
 			`;
 		}
 	}}
+	
+	${props => {
+		if (props.restaurantProfile) {
+			return `
+			color: #fff;
+			background: ${props.theme.orangeMain};
+			position: relative;
+			padding: 8px 32px;
+			letter-spacing: 1px;
+			font-size: ${props.theme.fontNormal};
+			`;
+		}
+	}}
 `;
 
 export default Btn;
