@@ -2,21 +2,10 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from apps.reviews.models import Review
-from apps.restaurants.serializers import User
-from apps.restaurants.models import Restaurant
+from apps.users.serializers import UserSerializer
+from apps.restaurants.serializers import RestaurantSerializer
 
 User = get_user_model()
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        models = User
-        fields = "__all__"
-
-class RestaurantSerializer(serializers.ModelSerializer):
-    class Meta:
-        models = Restaurant
-        fields = "__all__"
 
 
 class ReviewSerializer(serializers.ModelSerializer):
