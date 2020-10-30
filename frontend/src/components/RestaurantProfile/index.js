@@ -7,17 +7,17 @@ import Form from '../../style/Form';
 import Btn from '../../style/Button';
 import avatar from '../../assets/images/avatar.png';
 
-const RestaurantProfilePage = () => {
+const RestaurantProfilePage = ({ restaurant }) => {
 	return (
 		<Fragment>
 			<ShowcaseHome restaurantProfile>
 				<div className='overlay'>
 					<div className='restaurant-info'>
-						<h1>Restaurant Name</h1>
+						<h1>{restaurant.name}</h1>
 						<p>Category</p>
 						<p className='ratings'>
 							<StarRatings
-								// rating={restaurant.average_rating}
+								rating={restaurant.average_rating}
 								starDimension='22px'
 								starSpacing='3px'
 								starRatedColor='#E47D31'

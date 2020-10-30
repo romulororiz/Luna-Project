@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, RetrieveAPIView
 
 from apps.reviews.serielizers import ReviewSerializer
 
@@ -39,5 +39,17 @@ class RetrieveUpdateDestroyReviewAPIView(RetrieveUpdateDestroyAPIView):
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset().filter(id=kwargs['review_id'])
+        detailed_serializer = ReviewSerializer(queryset, many=True)
+        return Response(detailed_serializer.data)
+
+
+class RetrieveRestaurantReview(RetrieveAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    permission_classes = [IsAuthorOrReadOnly]
+    lookup_url_kwarg = 'restaurant_id'
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset().filter(restaurant=kwargs['restaurant_id'])
         detailed_serializer = ReviewSerializer(queryset, many=True)
         return Response(detailed_serializer.data)
