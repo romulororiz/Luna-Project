@@ -10,17 +10,13 @@ import Spinner from '../components/BaseComponents/Spinner';
 const RestaurantProfile = (props) => {
 	const dispatch = useDispatch();
 	const [datRestaurant, setdatRestaurant] = useState([]);
-	console.log(datRestaurant)
 
 	useEffect(() => {
 		const getData = async () => {
 			const data = await dispatch(specificRestaurantAction(props.match.params.restaurantId));
 			setdatRestaurant(data);
-			console.log(data)
 		};
 		getData();
-		console.log(datRestaurant)
-		console.log("--------")
 	}, []);
 
 	return (
@@ -33,7 +29,6 @@ const RestaurantProfile = (props) => {
 					<RestaurantProfilePage restaurant={datRestaurant} key={datRestaurant.id} />
 				}
 			</div>
-			{/* <RestaurantProfilePage restaurant={datRestaurant} key={datRestaurant.id} /> */}
 			<Footer />
 		</Fragment>
 	);
