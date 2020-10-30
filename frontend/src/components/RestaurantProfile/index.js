@@ -1,23 +1,39 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import StarRatings from 'react-star-ratings';
 import { ShowcaseHome } from '../Home/Showcase/style';
 import { Container } from '../../style/Container';
 import { ReviewRestaurantProfile } from './style';
+import specificReviewAction from '../../store/Actions/specificReviewAction';
+
 import Form from '../../style/Form';
 import Btn from '../../style/Button';
 import avatar from '../../assets/images/avatar.png';
 
-const RestaurantProfilePage = () => {
+const RestaurantProfilePage = ({ restaurant }) => {
+	const dispatch = useDispatch();
+	const [Reviews, setReviews] = useState([]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(specificReviewAction(restaurant.id));
+			setReviews(data);
+		};
+		getData();
+	}, []);
+
+
 	return (
 		<Fragment>
 			<ShowcaseHome restaurantProfile>
 				<div className='overlay'>
 					<div className='restaurant-info'>
-						<h1>Restaurant Name</h1>
+						<h1>{restaurant.name}</h1>
 						<p>Category</p>
 						<p className='ratings'>
 							<StarRatings
-								// rating={restaurant.average_rating}
+								rating={restaurant.average_rating}
 								starDimension='22px'
 								starSpacing='3px'
 								starRatedColor='#E47D31'

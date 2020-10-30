@@ -42,6 +42,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
     average_rating = serializers.SerializerMethodField()
 
     def get_reviews(self, restaurant):
+
         return restaurant.fk_reviews.all().count()
 
     def get_average_rating(self, restaurant):

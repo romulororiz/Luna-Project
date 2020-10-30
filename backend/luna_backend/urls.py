@@ -33,6 +33,7 @@ urlpatterns = [
     path('backend/api/users/', include('apps.users.urls')),
     path('backend/api/restaurants/', include('apps.restaurants.urls')),
     path('backend/api/reviews/', include('apps.reviews.urls')),
+    path('backend/api/review/comment/', include('apps.comments.urls')),
     path('backend/api/auth/', include(authurls)),
     path('backend/api/admin/', admin.site.urls),
 ]
