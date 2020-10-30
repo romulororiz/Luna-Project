@@ -1,11 +1,15 @@
 import React, { Fragment } from 'react';
 import { RestaurantInfo } from './style';
 import StarRatings from 'react-star-ratings';
+import { useHistory } from 'react-router-dom';
 
 const RestaurantSingle = ({ restaurant }) => {
+	const history = useHistory();
+
+	
 	return (
 		<Fragment>
-			<RestaurantInfo>
+			<RestaurantInfo onClick={() => history.push('/restaurant-profile/' + restaurant.id + '/')}>
 				<div className='restaurant-info'>
 					<p>{restaurant.name}</p>
 					<p>{restaurant.street}</p>

@@ -7,7 +7,7 @@ import Showcase from '../components/Home/Showcase';
 import { Title } from '../style/Title';
 import RestaurantSingle from '../components/Home/BestRated';
 import { Container } from '../style/Container';
-import restaurantAction from '../store/Actions/restaurantAction';
+import homeAction from '../store/Actions/homeAction';
 import Spinner from '../components/BaseComponents/Spinner';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
 
 	useEffect(() => {
 		const getData = async () => {
-			const data = await dispatch(restaurantAction());
+			const data = await dispatch(homeAction());
 			console.log(data);
 			setRestaurants(data);
 		};

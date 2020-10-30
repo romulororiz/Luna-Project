@@ -1,29 +1,47 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import StarRatings from 'react-star-ratings';
 import { ShowcaseHome } from '../Home/Showcase/style';
 import { Container } from '../../style/Container';
 import { ReviewRestaurantProfile } from './style';
+import ReviewRestaurantProfileDisplay from './Reviews/index'
+import specificReviewAction from '../../store/Actions/specificReviewAction';
+
+
 import Form from '../../style/Form';
 import Btn from '../../style/Button';
 import avatar from '../../assets/images/avatar.jpg';
 
-const RestaurantProfilePage = () => {
+const RestaurantProfilePage = ({ restaurant }) => {
+	const dispatch = useDispatch();
+	const [Reviews, setReviews] = useState([]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(specificReviewAction(restaurant.id));
+			setReviews(data);
+		};
+		getData();
+	}, []);
+
+
 	return (
 		<Fragment>
 			<ShowcaseHome restaurantProfile>
 				<div className='overlay'>
 					<div className='restaurant-info'>
-						<h1>Restaurant Name</h1>
-						<p>Category</p>
+						<h1>{restaurant.name}</h1>
+						<p>{restaurant.category}</p>
 						<p className='ratings'>
 							<StarRatings
-								// rating={restaurant.average_rating}
+								rating={restaurant.average_rating}
 								starDimension='22px'
 								starSpacing='3px'
 								starRatedColor='#E47D31'
 								starEmptyColor='#c3c3c3'
 							/>
-							<span>68</span>
+							<span>{restaurant.rating}</span>
 						</p>
 					</div>
 				</div>
@@ -35,6 +53,17 @@ const RestaurantProfilePage = () => {
 							<Form restaurantProfileFilter placeholder='Filter...' />
 							<Btn restaurantProfile>Filter</Btn>
 						</div>
+
+						<Container bestRated>
+							{typeof(Reviews) != undefined ? (
+								Reviews.map(review => (
+									<ReviewRestaurantProfileDisplay review={review} key={review.id} />
+								))
+							) : (
+								<p>No reviews!</p>
+							)}
+						</Container>
+
 						<ReviewRestaurantProfile>
 							<section className='user-info-restaurant-profile'>
 								<img className='avatar' src={avatar} alt='' />
@@ -67,32 +96,17 @@ const RestaurantProfilePage = () => {
 								<Form restaurantProfile />
 								<Btn restaurantProfile>Post</Btn>
 							</div>
-							<section className='action-buttons-restaurant-profile'>
-								<Btn btnLike>
-									<i class='fas fa-thumbs-up'></i>like <span>20</span>
-								</Btn>
-								<Btn btnComment>
-									Comment <span>40</span>
-								</Btn>
-							</section>
-							<section className='review-comments-restaurant-profile'>
-								<p>Latest Comments:</p>
-								<div className='user-comment-restaurant-profile'>
-									<p>User Name</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-								</div>
-								<div className='user-comment-restaurant-profile'>
-									<p>User Name</p>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-								</div>
-							</section>
 						</ReviewRestaurantProfile>
 					</div>
-					<div className='info-profile-page'>Ola</div>
+					<div style={{"display":"flex", "flex-direction": "column", "align-content": "center", "paddingLeft":"20px"}}>
+						<div className='info-profile-page'>{restaurant.openhours}</div>
+							<p>Price level:</p>
+							<p>{restaurant.pricelevel}</p>
+							<div style={{"display":"flex", "flex-direction": "row"}}>
+								<Btn restaurantProfile>WRITE REVIEW</Btn>
+								<Btn restaurantProfile>EDIT DATA</Btn>
+							</div>
+					</div>
 				</section>
 			</Container>
 		</Fragment>
