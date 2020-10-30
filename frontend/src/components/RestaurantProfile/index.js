@@ -5,7 +5,7 @@ import { Container } from '../../style/Container';
 import { ReviewRestaurantProfile } from './style';
 import Form from '../../style/Form';
 import Btn from '../../style/Button';
-import avatar from '../../assets/images/avatar.png';
+import avatar from '../../assets/images/avatar.jpg';
 
 const RestaurantProfilePage = () => {
 	return (
@@ -67,7 +67,7 @@ const RestaurantProfilePage = () => {
 								<Form restaurantProfile />
 								<Btn restaurantProfile>Post</Btn>
 							</div>
-							{/* <section className='action-buttons-restaurant-profile'>
+							<section className='action-buttons-restaurant-profile'>
 								<Btn btnLike>
 									<i class='fas fa-thumbs-up'></i>like <span>20</span>
 								</Btn>
@@ -89,7 +89,7 @@ const RestaurantProfilePage = () => {
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
 									</p>
 								</div>
-							</section> */}
+							</section>
 						</ReviewRestaurantProfile>
 					</div>
 					<div className='info-profile-page'>Ola</div>

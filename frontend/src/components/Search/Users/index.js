@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { UserInfo } from './style';
-import avatar from '../../../assets/images/avatar.png';
+import avatar from '../../../assets/images/avatar.jpg';
 
 const UserSingle = ({ user }) => {
 	const fullName = `${user.first_name} ${user.last_name}`;

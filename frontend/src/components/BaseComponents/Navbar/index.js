@@ -35,7 +35,7 @@ const Navbar = () => {
 							active === 'profile' ? 'profileLink active' : 'profileLink'
 						}
 						onClick={() => setActive('profile')}
-						to='#'
+						to='/user-profile'
 					>
 						Profile
 					</Link>

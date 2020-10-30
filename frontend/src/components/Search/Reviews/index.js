@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { ReviewInfo } from './style';
-import avatar from '../../../assets/images/avatar.png';
+import avatar from '../../../assets/images/avatar.jpg';
 import Btn from '../../../style/Button';
 
 const ReviewSingle = ({ review }) => {

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import showcase from '../../../assets/images/showcase.jpg';
 import restaurantProfileBanner from '../../../assets/images/restaurant-profile.jpg';
+import userProfileBanner from '../../../assets/images/user-profile-banner.jpg';
 
 export const ShowcaseHome = styled.section`
 	background: url(${showcase});
@@ -61,6 +62,39 @@ export const ShowcaseHome = styled.section`
 					.ratings > span {
 						margin-left: 20px;
 					}
+				}
+			}
+			`;
+		}
+	}}
+
+	${props => {
+		if (props.userProfile) {
+			return `
+			background: url(${userProfileBanner});
+			min-height: 220px;
+			background-attachment: static;
+			background-position: center left;
+			background-size: stretch;
+			position: relative;
+			.overlay {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-height: 220px;
+				width: 100%;
+				background: rgba(0, 0, 0, 0.55);
+				z-index: 1;
+			}
+			
+			.showcase-text {
+				position: absolute;
+				z-index: 1;
+				top: 45%;
+				left: 24%;
+				p {
+					padding: 3px 0;
 				}
 			}
 			`;
