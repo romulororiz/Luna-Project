@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
+from django.db.models import Avg
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListAPIView, CreateAPIView, RetrieveAPIView
@@ -73,7 +74,6 @@ class ListBestRestaurantAPIView(ListAPIView):
     serializer_class = RestaurantSerializer
     permission_classes = []
 
-    def get(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-        detailed_serializer = TopRestaurantSerializer(queryset, many=True)
-        return Response(detailed_serializer.data)
+    def get_queryset(self):
+        top = Restaurant.objects.annotate(average_rating=Avg('fk_reviews__rating')).order_by('-average_rating').all()[:4]
+        return top
