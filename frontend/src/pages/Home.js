@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
 import Navbar from '../components/BaseComponents/Navbar';
 import Footer from '../components/BaseComponents/Footer';
 import Showcase from '../components/Home/Showcase';

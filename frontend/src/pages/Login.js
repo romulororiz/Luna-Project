@@ -1,14 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Navbar from '../components/BaseComponents/Navbar';
 import Footer from '../components/BaseComponents/Footer';
-import UserProfilePage from '../components/UserProfile';
+import LoginPage from '../components/Auth/Login';
 
-const UserProfile = () => {
-
+const Login = () => {
 	return (
 		<Fragment>
 			<Navbar />
-			<UserProfilePage />
+			<Login />
 			<Footer />
 		</Fragment>
 	);

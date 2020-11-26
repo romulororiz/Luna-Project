@@ -85,7 +85,7 @@ const Search = () => {
 					</p>
 				</div>
 			</Title>
-
+						
 			{active === 'restaurants' ? (
 				<Container Search>
 					{restaurants.length ? (
@@ -97,7 +97,7 @@ const Search = () => {
 					)}
 				</Container>
 			) : null}
-
+						
 			{active === 'reviews' ? (
 				<Container Search>
 					{reviews.length ? (

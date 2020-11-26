@@ -9,7 +9,7 @@ const RestaurantSingle = ({ restaurant }) => {
 	
 	return (
 		<Fragment>
-			<RestaurantInfo onClick={() => history.push('/restaurant-profile/' + restaurant.id + '/')}>
+			<RestaurantInfo black onClick={() => history.push('/restaurant-profile/' + restaurant.id + '/')}>
 				<div className='restaurant-info'>
 					<p>{restaurant.name}</p>
 					<p>{restaurant.street}</p>

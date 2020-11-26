@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ShowcaseHome } from '../Home/Showcase/style';
 import { Container } from '../../style/Container';
-import avatar from '../../assets/images/avatar.jpg';
 import star from '../../assets/svgs/star.svg';
 import comments from '../../assets/svgs/comment.svg';
 import restaurant from '../../assets/svgs/restaurant.svg';
@@ -95,7 +94,7 @@ const UserProfilePage = () => {
 						</ReviewUserProfile>
 					</div>
 					<div className='user-info'>
-						<h2>About User Name</h2>
+						<h2>About {fullName}</h2>
 						<div className='location'>
 							<h3>Location</h3>
 							<p>{user.location}</p>

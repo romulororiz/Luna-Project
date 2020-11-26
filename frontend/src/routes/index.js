@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Search from '../pages/Search';
 import RestaurantProfile from '../pages/RestaurantProfile';
 import UserProfile from '../pages/UserProfile';
+import Login from '../components/Auth/Login';
 
 const Routes = () => {
 	return (
@@ -17,6 +18,7 @@ const Routes = () => {
 					path='/restaurant-profile/:restaurantId'
 					component={RestaurantProfile}
 				/>
+				<Route exact path='/login' component={Login} />
 			</Switch>
 		</Router>
 	);

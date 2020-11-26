@@ -43,7 +43,7 @@ const Navbar = () => {
 						<Link className='signUp' to='#'>
 							SignUp
 						</Link>
-						<Link className='login' to='#'>
+						<Link className='login' to='/login'>
 							Login
 						</Link>
 					</BtnsWrapper>

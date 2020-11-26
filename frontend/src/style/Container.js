@@ -106,6 +106,7 @@ export const Container = styled.div`
 				z-index: 1;
 				.avatar {
 					width: 100%;
+					padding: 5px;
 				}
 			}
 
